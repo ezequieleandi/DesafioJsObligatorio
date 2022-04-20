@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+body{
+    background-color: #FED2AA;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h2{
+    font-size: $font-32;    
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+}
