@@ -57,7 +57,7 @@ const datosCliente=()=>{
     let apellidoIngresado = prompt ("Ingrese su apellido");
     let telefonoIngresado = prompt ("ingrese un celular para ser contactado");
     let zonaIngresada = prompt ("¿En que barrio de la ciudad vive?");
-    let cliente1 = new Cliente (nombreIngresado, apellidoIngresado, telefonoIngresado, zonaIngresada);
+    cliente1 = new Cliente (nombreIngresado, apellidoIngresado, telefonoIngresado, zonaIngresada);
     return cliente1;
 }
 
@@ -74,8 +74,9 @@ const tipoProductoEleccion=()=>{
     }else{
         linea = prompt ("¿Que estilo le gustaria para su producto? \nAMOR \nPAZ \nVIDA");
     }
-    carrito.push = (new ProductoElegido (producto, linea));
-    alert (carrito)
+    let productoElegido = new ProductoElegido (producto, linea)
+    carrito.push = (productoElegido);
+    console.log (carrito)
 }
 
 //Arrays
