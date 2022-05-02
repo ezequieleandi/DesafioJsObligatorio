@@ -74,9 +74,8 @@ const tipoProductoEleccion=()=>{
     }else{
         linea = prompt ("¿Que estilo le gustaria para su producto? \nAMOR \nPAZ \nVIDA");
     }
-    let productoElegido = new ProductoElegido (producto, linea)
-    carrito.push = (productoElegido);
-    console.log (carrito)
+    productoElegido = new ProductoElegido (producto, linea)
+    return productoElegido;
 }
 
 //Arrays
@@ -101,6 +100,8 @@ let decision = prompt("Bienvenido a Barronativo " + "¿Desea comprar o consultar
 if (decision == "comprar"){
     datosCliente();
     tipoProductoEleccion();
+    carrito.push = (productoElegido);
+    console.log (carrito)
 }else{
     nombreCompleto();
     consultar();
