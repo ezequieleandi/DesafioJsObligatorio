@@ -1,14 +1,5 @@
--identificacion del usuario (nombre y apellido por separado)
--Comprar o consultar
--Comprar: no estamos teneindo stock. Enviar a consultar si quiere
--Consultar:
-*telefono
-*consulta
--quiere recibir promociones o  cosas nuevas:
-*mail
-
--mensaje de agradecimiento 
-
-
-
+-elija el producto (taza, mate, cuenco)
+-linea que desea (segun producto elejido)
+-cantidad que desea
+-
 
