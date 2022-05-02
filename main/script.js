@@ -95,13 +95,7 @@ const productos = [
 //array vacio de lo que va comprando cliente
 const carrito = [];
 
-// nombreCompleto();
-while (nombre == "" || apellido == ""){
-    alert("No ingreso nombre o apellido")
-    nombreCompleto()
-}
-
-let decision = prompt("Bienvenido a Barronativo " + nombre + " " + apellido + " ¿Desea comprar o consultar?").toLowerCase();
+let decision = prompt("Bienvenido a Barronativo " + "¿Desea comprar o consultar?").toLowerCase();
 
 if (decision == "comprar"){
     datosCliente();
