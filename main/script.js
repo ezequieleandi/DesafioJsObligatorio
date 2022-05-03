@@ -115,12 +115,6 @@ let decision = prompt("Bienvenido a Barronativo " + "¿Desea comprar o consultar
 if (decision == "comprar"){
     comprarProducto()
     mostrarCarrito()
-    // let preguntaCompra = prompt("Desea comprar otro producto? (si/no)")
-    // if(preguntaCompra == "si"){
-    //     comprarProducto()
-    // }else{
-    //     mostrarCarrito()
-    // }
 }else{
     nombreCompleto();
     consultar();
