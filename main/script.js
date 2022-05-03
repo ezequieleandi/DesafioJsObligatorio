@@ -1,19 +1,33 @@
+//Arrays
+//array de pruductos
+const productos = [
+    {id:1, objeto: "taza", linea: "amor", precio: 510},
+    {id:2, objeto: "taza", linea: "empatia", precio: 580},
+    {id:3, objeto: "taza", linea: "calma", precio: 650},
+    {id:4, objeto: "cuenco", linea: "paz", precio: 550},
+    {id:5, objeto: "cuenco", linea: "amor", precio: 880},
+    {id:6, objeto: "cuenco", linea: "vida", precio: 690},
+    {id:7, objeto: "mate", linea: "calma", precio: 700},
+    {id:8, objeto: "mate", linea: "libertad", precio: 750},
+    {id:9, objeto: "mate", linea: "pureza", precio: 510},
+    {id:10, objeto: "mate", linea: "empatia", precio: 620}
+];
+//array vacio de lo que va comprando cliente
+const carritoProducto = [];
+
 //variables inicializadas
 let nombre
 let apellido
 let telefono
 let consulta
 let correo
-let aperturaEleccion;
-let linea;
-let prodcuto;
-let pregunta2;
 
 //clases constructoras
 class ProductoElegido{
-    constructor (objeto, estilo){
+    constructor (objeto, estilo, precio){
         this.objeto = objeto;
-        this.estilo = estilo
+        this.estilo = estilo;
+        this.precio = precio;
     }
 }
 class Cliente{
@@ -52,56 +66,61 @@ function consultar(){
     recibirPromociones()
 }
 
-const datosCliente=()=>{
-    let nombreIngresado = prompt ("Ingrese su nombre");
-    let apellidoIngresado = prompt ("Ingrese su apellido");
-    let telefonoIngresado = prompt ("ingrese un celular para ser contactado");
-    let zonaIngresada = prompt ("¿En que barrio de la ciudad vive?");
-    cliente1 = new Cliente (nombreIngresado, apellidoIngresado, telefonoIngresado, zonaIngresada);
-    return cliente1;
+function mostrarProducto(){
+    let salida = "";
+    for (let producto of productos){
+        salida += producto.id + "- Producto: " + producto.objeto + " Estilo: " + producto.linea + " Precio: $" + producto.precio + "\n"
+    }
+    return salida
 }
 
-const tipoProductoEleccion=()=>{
-    let producto = prompt ("¿Que producto desea elegir? \nTAZA \nMATE \nCUENCO");
-    while (producto.toLowerCase() != "taza" && producto.toLowerCase() != "mate" && producto.toLowerCase() != "cuenco"){
-        alert ("No tenemos ese producto. Ingrese otro porfavor"); 
-        producto = prompt ("¿Que producto desea elegir? \nTAZA \nMATE \nCUENCO"); 
+function comprarProducto(){
+    let salida = ""
+    while(salida != "ESC"){
+        let listaProductos = mostrarProducto()
+        let productoSeleccionado = parseInt(prompt("Ingrese el producto que quiere:\n\n " + listaProductos))
+        let producto = productos[(productoSeleccionado - 1)]
+        agregarCarrito(producto);
+        salida = prompt("Desea elegir otro producto? Escriba ESC para salir").toUpperCase()
     }
-    if (producto.toUpperCase() === "TAZA"){
-        linea = prompt ("¿Que estilo le gustaria para su producto? \nAMOR \nCALMA \nEMPATIA");
-    }else if (producto.toUpperCase() === "MATE"){
-        linea = prompt ("¿Que estilo le gustaria para su producto? \nLIBERTAD \nCALMA \nEMPATIA \nPUREZA");
-    }else{
-        linea = prompt ("¿Que estilo le gustaria para su producto? \nAMOR \nPAZ \nVIDA");
-    }
-    productoElegido = new ProductoElegido (producto, linea)
-    return productoElegido;
 }
 
-//Arrays
-//array de pruductos
-const productos = [
-    {id:1, objeto: "taza", linea: "amor", precio: 510},
-    {id:2, objeto: "taza", linea: "empatia", precio: 580},
-    {id:3, objeto: "taza", linea: "calma", precio: 650},
-    {id:4, objeto: "cuenco", linea: "paz", precio: 550},
-    {id:5, objeto: "cuenco", linea: "amor", precio: 880},
-    {id:6, objeto: "cuenco", linea: "vida", precio: 690},
-    {id:7, objeto: "mate", linea: "calma", precio: 700},
-    {id:8, objeto: "mate", linea: "libertad", precio: 750},
-    {id:9, objeto: "mate", linea: "pureza", precio: 510},
-    {id:10, objeto: "mate", linea: "empatia", precio: 620}
-];
-//array vacio de lo que va comprando cliente
-const carrito = [];
+function agregarCarrito(modelo){
+    carritoProducto.push(modelo)
+}
+
+function mostrarCarrito(){
+    let salida = "";
+    let totalPagar = 0;
+    for (let carrito of carritoProducto){
+        salida +="-nombre: " + carrito.objeto + "  Pecio: " + carrito.precio + "\n";
+        totalPagar += parseFloat(carrito.precio);
+    }
+    salida += "Total a pagar: $" + totalPagar;
+    alert(salida)
+}
+
+
+// const datosCliente=()=>{
+//     let nombreIngresado = prompt ("Ingrese su nombre");
+//     let apellidoIngresado = prompt ("Ingrese su apellido");
+//     let telefonoIngresado = prompt ("ingrese un celular para ser contactado");
+//     let zonaIngresada = prompt ("¿En que barrio de la ciudad vive?");
+//     cliente1 = new Cliente (nombreIngresado, apellidoIngresado, telefonoIngresado, zonaIngresada);
+//     return cliente1;
+// }
 
 let decision = prompt("Bienvenido a Barronativo " + "¿Desea comprar o consultar?").toLowerCase();
 
 if (decision == "comprar"){
-    datosCliente();
-    tipoProductoEleccion();
-    carrito.push = (productoElegido);
-    console.log (carrito)
+    comprarProducto()
+    mostrarCarrito()
+    // let preguntaCompra = prompt("Desea comprar otro producto? (si/no)")
+    // if(preguntaCompra == "si"){
+    //     comprarProducto()
+    // }else{
+    //     mostrarCarrito()
+    // }
 }else{
     nombreCompleto();
     consultar();
