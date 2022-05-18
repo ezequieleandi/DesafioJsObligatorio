@@ -100,16 +100,6 @@ function mostrarCarrito(){
     alert(salida)
 }
 
-
-// const datosCliente=()=>{
-//     let nombreIngresado = prompt ("Ingrese su nombre");
-//     let apellidoIngresado = prompt ("Ingrese su apellido");
-//     let telefonoIngresado = prompt ("ingrese un celular para ser contactado");
-//     let zonaIngresada = prompt ("¿En que barrio de la ciudad vive?");
-//     cliente1 = new Cliente (nombreIngresado, apellidoIngresado, telefonoIngresado, zonaIngresada);
-//     return cliente1;
-// }
-
 let decision = prompt("Bienvenido a Barronativo " + "¿Desea comprar o consultar?").toLowerCase();
 
 if (decision == "comprar"){
