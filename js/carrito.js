@@ -1,4 +1,4 @@
-fetch("/productos.json")
+fetch("https://raw.githubusercontent.com/ezequieleandi/DesafioJsObligatorio/main/productos.json")
 .then((response) => response.json())
 .then((data)=>{
     function guardarProducLS(data) {

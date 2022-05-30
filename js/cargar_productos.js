@@ -1,6 +1,6 @@
 const cargarProductos = (idCardProduct) => {
     let contenido = "";
-    fetch("/productos.json")
+    fetch("https://raw.githubusercontent.com/ezequieleandi/DesafioJsObligatorio/main/productos.json")
     .then((response) => response.json())
     .then((data) =>{
         let tazas = data.filter((el) => el.producto.includes("taza"))
