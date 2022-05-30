@@ -1,7 +1,18 @@
-let concatProductos = cargarTazasLS().concat(cargarCuencosLS()).concat(cargarMatesLS());
+fetch('/productos.json')
+.then((response) => response.json())
+.then((data)=>{
+    function guardarProducLS(data) {
+        localStorage.setItem("produc", JSON.stringify(data));
+    }
+    guardarProducLS(data)
+})
+
+function cargarProducLS() {
+    return JSON.parse(localStorage.getItem("produc"));
+}
 
 function buscarProducto(id) {
-    let productos = concatProductos;
+    let productos = cargarProducLS();
     return productos.find(x => x.id == id);
 }
 
