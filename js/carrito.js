@@ -87,8 +87,10 @@ function actualizarBotonCarrito() {
 function dibujarProductoEnCarrito(){
     if(document.getElementById("cuerpoCarrito")){
         let cuerpoCarrito = document.getElementById("cuerpoCarrito");
+        let aModal = document.getElementById("aModal");
         let productosCarrito = cargarProductosCarrito();
         let contenido = "";
+        let total = 0;
         if(productosCarrito.length === 0){
             contenido = "<p class='text-center p-6'>El carrito de compras esta vacio</p>";
             cuerpoCarrito.innerHTML = contenido
@@ -117,8 +119,10 @@ function dibujarProductoEnCarrito(){
                 <td><button class='btn' onclick='eliminarProducto(${productos.id});'><img src="../imgBarronativo2/xEliminar.svg" alt='Eliminar' width='24'></button></td>
               </tr>
             </tbody>`
+            total += productos.precio * productos.cantidad
           }
           contenido += `</table>`
+          aModal.innerHTML = `<button type="button" class="btn btn-primary">$${total} COMPRAR</button>`
           cuerpoCarrito.innerHTML = contenido
         }
     }
