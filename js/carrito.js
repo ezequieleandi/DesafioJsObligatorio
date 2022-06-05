@@ -27,6 +27,7 @@ function eliminarCarrito() {
     localStorage.removeItem("carrito");
     actualizarBotonCarrito();
     dibujarProductoEnCarrito();
+    actualizarBotonComprar();
 }
 
 function agregarAlCarrito(id) {
@@ -45,9 +46,10 @@ function agregarAlCarrito(id) {
     dibujarProductoEnCarrito()
     const Toast = Swal.mixin({
         toast: true,
-        position: 'bottom-end',
+        position: 'top-end',
         showConfirmButton: false,
-        timer: 1000,
+        timer: 2000,
+        background:'#FED2AA',
     }) 
     Toast.fire({
         icon: 'success',
@@ -76,12 +78,21 @@ function eliminarProducto(id) {
     localStorage.setItem("carrito", JSON.stringify(productos_carrito));
     actualizarBotonCarrito();
     dibujarProductoEnCarrito();
+    actualizarBotonComprar();
 }
 
 function actualizarBotonCarrito() {
     let productos_carrito = cargarProductosCarrito();
     let contenido = `<button type="button" class="position-relative"><img src="../imgBarronativo2/carritoImg.svg" alt="Carrito"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${productos_carrito.length}</span></button>`;
     document.getElementById("iconoCarrito").innerHTML = contenido;
+}
+
+function actualizarBotonComprar(){
+    let btnComprar = document.getElementById("btnComprar");
+    let prodCarrito = cargarProductosCarrito();
+    if(prodCarrito.length == 0){
+        btnComprar.innerText = `$0 COMPRAR`
+    }
 }
 
 function dibujarProductoEnCarrito(){
@@ -92,7 +103,7 @@ function dibujarProductoEnCarrito(){
         let contenido = "";
         let total = 0;
         if(productosCarrito.length === 0){
-            contenido = "<p class='text-center p-6'>El carrito de compras esta vacio</p>";
+            contenido = "<p class='text-center'>El carrito de compras esta vacio</p>";
             cuerpoCarrito.innerHTML = contenido
         }else{
             contenido = `<table class="table caption-top table-borderless">
@@ -122,10 +133,9 @@ function dibujarProductoEnCarrito(){
             total += productos.precio * productos.cantidad
           }
           contenido += `</table>`
-          aModal.innerHTML = `<button type="button" class="btn btn-primary">$${total} COMPRAR</button>`
+          aModal.innerHTML = `<button type="button" class="btn btn-primary" id="btnComprar">$${total} COMPRAR</button>`
           cuerpoCarrito.innerHTML = contenido
         }
     }
 }
-
 document.getElementById("iconoTrash").addEventListener("click", eliminarCarrito);

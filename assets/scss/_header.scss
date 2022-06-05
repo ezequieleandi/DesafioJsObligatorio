@@ -1,5 +1,5 @@
 header{
-    background-color: #fcaa62ea;
+    background-color: #EBD8C3;
     width: 100%;
     div{
         @include flexCompleto (flex, center, center);
@@ -15,7 +15,7 @@ header{
          
     }
     .navItem{
-        background-color: #fcaa62ea !important;
+        background-color: #EBD8C3 !important;
         div{
             @include flex (flex, center);
             ul li{

@@ -8,7 +8,7 @@ a {
   text-decoration: none; }
 
 body {
-  background-color: #FED2AA;
+  background-color: #F7E9D7;
   font-family: 'Quicksand', sans-serif; }
 
 h2 {
@@ -17,8 +17,11 @@ h2 {
   text-align: center;
   font-weight: bold; }
 
+.toastifyNotification {
+  color: #FED2AA; }
+
 header {
-  background-color: #fcaa62ea;
+  background-color: #EBD8C3;
   width: 100%; }
   header div {
     display: flex;
@@ -33,7 +36,7 @@ header {
       margin: 0 6% 1% 1%;
       font-size: 3rem; }
   header .navItem {
-    background-color: #fcaa62ea !important; }
+    background-color: #EBD8C3 !important; }
     header .navItem div {
       display: flex;
       justify-content: center; }
@@ -42,7 +45,7 @@ header {
         font-size: 1rem;
         font-style: italic;
         font-weight: bold;
-        background-color: #e29450ea;
+        background-color: #EBD8C3;
         margin-right: 1%;
         list-style-type: none;
         padding: 0 20px; }
@@ -65,7 +68,7 @@ header {
       margin-top: 5%; }
 
 .flexSobreProd {
-  background-color: #FAE7D2;
+  background-color: #EBD8C3;
   display: flex;
   margin-top: 3%;
   padding: 3% 0 3% 0;
@@ -115,11 +118,11 @@ header {
     .sectionContacto form .divBotones {
       margin-left: 33%; }
       .sectionContacto form .divBotones button {
-        background-color: #e29450ea; }
+        background-color: #EBD8C3; }
 
 footer {
   padding: 3% 0 3% 0;
-  background-color: #a8a75ca8; }
+  background-color: #e3ccb2; }
   footer .flexElementFooter {
     display: flex;
     align-items: center;
@@ -166,10 +169,10 @@ footer {
       width: 40vw; }
 
 .sectionProducto {
-  background-color: #FED2AA;
+  background-color: #F7E9D7;
   margin-bottom: 8%; }
   .sectionProducto h2 {
-    background-color: #c3692dc5;
+    background-color: #EBD8C3;
     padding: 1% 0 1% 0; }
   .sectionProducto .divParrafos {
     text-align: center; }
@@ -203,6 +206,16 @@ footer {
         font-size: 0.8rem; }
     .sectionProducto article .divProductos #cardCuencos {
       height: 425px; }
+
+.tablaCarrito {
+  margin-top: 4%;
+  font-size: 1.2rem; }
+  .tablaCarrito .itemCarrito {
+    font-size: 1.2rem; }
+
+.pOculto {
+  font-size: 1.3rem;
+  margin-top: 7%; }
 
 @media screen and (max-width: 1200px) {
   .carruselTamaño {
