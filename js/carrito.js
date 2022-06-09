@@ -133,7 +133,7 @@ function dibujarProductoEnCarrito(){
             total += productos.precio * productos.cantidad
           }
           contenido += `</table>`
-          aModal.innerHTML = `<button type="button" class="btn btn-primary" id="btnComprar">$${total} COMPRAR</button>`
+          aModal.innerHTML = `<button type="button" class="btn btnFinal" id="btnComprar">$${total} COMPRAR</button>`
           cuerpoCarrito.innerHTML = contenido
         }
     }

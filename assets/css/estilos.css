@@ -217,6 +217,17 @@ footer {
   font-size: 1.3rem;
   margin-top: 7%; }
 
+.btnFinal {
+  background-color: #EBD8C3; }
+
+.center {
+  text-align: center;
+  background-color: #F7E9D7; }
+
+.divFinalizarCompra {
+  width: 100%;
+  margin-top: 5%; }
+
 @media screen and (max-width: 1200px) {
   .carruselTamaño {
     height: 50vh; }
