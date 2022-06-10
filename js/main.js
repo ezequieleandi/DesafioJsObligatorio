@@ -1,3 +1,4 @@
+//funcionalidad del formulario de la pagina principal (index.html)
 const personas = []
 const consultas = []
 let formulario = document.querySelector ("#formularioId");

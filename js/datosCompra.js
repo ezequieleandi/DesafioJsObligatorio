@@ -85,6 +85,7 @@ function mostrarFinal(){
         </div>`;
     }
     carritoFinal.innerHTML = contenido;
+    document.querySelector("#finalizar").addEventListener("click", finalizarCompra);
 }
 
 function guardarDatosFormu(data){
@@ -130,12 +131,20 @@ function validarFormulario(e) {
 document.getElementById("botonEnviar").addEventListener("click", validarFormulario);
 
 function finalizarCompra(){
-  let divProdFinal = document.getElementById("divProdFinal")
-  let divDatosFinal = document.getElementById("divDatosFinal")
-  let divBtnFinal = document.getElementById("divBtnFinal")
-  divProdFinal.remove()
-  divDatosFinal.remove()
-  divBtnFinal.remove()
+  let divProdFinal = document.getElementById("divProdFinal");
+  let divDatosFinal = document.getElementById("divDatosFinal");
+  let divBtnFinal = document.getElementById("divBtnFinal");
+  let contenido = "";
+  divProdFinal.remove();
+  divDatosFinal.remove();
+  divBtnFinal.remove();
+  contenido += `<div class="text-center pOculto">
+  <p class="">MUCHAS GRACIAS POR SU COMPRA</p>
+  <p>PRONTO NOS ESTAREMOS COMUNICANDO POR TELEFONO O WPP PARA INDICARLE LA FECHA DE ENTREGA</p>
+  </div>`
+  carritoFinal.innerHTML = contenido;
+  setTimeout(()=> {
+    location.pathname = '../index.html';
+  }, 4000)
+  eliminarCarrito();
 }
-
-document.querySelector("#finalizar").addEventListener("click", finalizarCompra);

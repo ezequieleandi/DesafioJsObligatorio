@@ -7,26 +7,6 @@ const cargarProductos = (idCardProduct) => {
         let cuenco = data.filter((el) => el.producto.includes("CUENCO"))
         let mates = data.filter((el) => el.producto.includes("MATE"))
         function iterarProductos(articulo){
-            // articulo.forEach(producto =>{
-            //     contenido += `
-            //         <div class="cardProductos">
-            //             <img src=${producto.imagen} alt="${producto.linea}">
-            //             <h3>${producto.linea}</h3>
-            //             <div class="container-fluid divContCard">
-            //                 <div class="row">
-            //                     <select id="selectTaza-${producto.id}"></select>
-            //                     <button type="button" class="btn btn-secondary col-12" onclick="agregarAlCarrito(${producto.id})">Añadir</button>
-            //                 </div>
-            //             </div>
-            //         </div>`
-            // })
-            // document.getElementById(idCardProduct).innerHTML = contenido;
-
-            // articulo.forEach(producto => {
-            //     let currentSelect = document.getElementById(`selectTaza-${producto.id}`);
-            //     producto.caracteristica.forEach(caracteristica => currentSelect.innerHTML +=
-            //         `<option id="option">Capacidad: ${caracteristica.capacidad} // $ ${caracteristica.precio}</option>`)
-            // })
             for(producto of articulo){
                 contenido += `
                     <div class="cardProductos">
