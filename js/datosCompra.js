@@ -145,6 +145,6 @@ function finalizarCompra(){
   carritoFinal.innerHTML = contenido;
   setTimeout(()=> {
     location.pathname = '/DesafioJsObligatorio/';
-  }, 4000)
+  }, 3000)
   eliminarCarrito();
 }
