@@ -144,7 +144,7 @@ function finalizarCompra(){
   </div>`
   carritoFinal.innerHTML = contenido;
   setTimeout(()=> {
-    location.pathname = '/DesafioJsObligatorio/index.html';
+    location.pathname = 'https://ezequieleandi.github.io/DesafioJsObligatorio/index.html';
   }, 4000)
   eliminarCarrito();
 }
